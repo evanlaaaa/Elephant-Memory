@@ -1,0 +1,16 @@
+C:\Users\Z\source\repos\WindowsFormsApp3\WindowsFormsApp3\bin\Release\WindowsFormsApp3.exe.config
+C:\Users\Z\source\repos\WindowsFormsApp3\WindowsFormsApp3\bin\Release\WindowsFormsApp3.exe
+C:\Users\Z\source\repos\WindowsFormsApp3\WindowsFormsApp3\bin\Release\WindowsFormsApp3.pdb
+C:\Users\Z\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\WindowsFormsApp3.csprojAssemblyReference.cache
+C:\Users\Z\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\WindowsFormsApp3.dialogGameSetting.resources
+C:\Users\Z\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\WindowsFormsApp3.dialogName.resources
+C:\Users\Z\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\WindowsFormsApp3.dialogRules.resources
+C:\Users\Z\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\WindowsFormsApp3.dialogWin.resources
+C:\Users\Z\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\WindowsFormsApp3.gamePlay.resources
+C:\Users\Z\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\WindowsFormsApp3.menu.resources
+C:\Users\Z\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\WindowsFormsApp3.Properties.Resources.resources
+C:\Users\Z\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\WindowsFormsApp3.csproj.GenerateResource.cache
+C:\Users\Z\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\WindowsFormsApp3.exe
+C:\Users\Z\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\WindowsFormsApp3.pdb
+C:\Users\Z\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\WindowsFormsApp3.OnePlayerGamePlay.resources
+C:\Users\Z\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\WindowsFormsApp3.TwoPlayersGamePlay.resources
