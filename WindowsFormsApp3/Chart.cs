@@ -11,9 +11,9 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace StupidGame {
     public partial class Chart : Form {
-        DB db;
-        List<string[]> data_pack;
-        int game_type;
+        private DB db;
+        private List<string[]> data_pack;
+        private int game_type;
         
         public Chart() { }
 

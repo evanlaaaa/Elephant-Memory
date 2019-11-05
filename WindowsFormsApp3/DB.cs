@@ -7,13 +7,15 @@ using System.Data.SqlClient;
 
 namespace StupidGame {
     public class DB {
-        SqlConnection conn;
-        SqlCommand command;
-        SqlDataReader dr;
+        private SqlConnection conn;
+        private SqlCommand command;
+        private SqlDataReader dr;
         public DB() {
+            //establise connection when create instance for db class
             conn = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=ElephantMemory;Integrated Security=True");
         }
 
+        //Save score (single player)
         public void saveScore(Player p, int s, int d, DateTime dt) {
             try {
                 int type = (d == 4) ? 1 : 2;
@@ -36,6 +38,7 @@ namespace StupidGame {
             }
         }
 
+        //Save score (multiplayer)
         public void saveScore(Player p, Player p2, int s, int s2) {
             try {
                 //Make the highest score player as p1 for scoreboard
@@ -65,6 +68,7 @@ namespace StupidGame {
             }
         }
 
+        //Get top10 performance details based on mode for scoreboard
         public List<string[]> getScoreBoard(int t) {
             try {
                 List<string[]> sb = new List<string[]>();
@@ -94,6 +98,7 @@ namespace StupidGame {
             }
         }
 
+        //Get data to display in graph
         public List<string[]> getChart(int t, string player) {
             
             List<string[]> sb = new List<string[]>();
@@ -123,6 +128,7 @@ namespace StupidGame {
             }
         }
 
+        //Get all player name who have participated and complete the game for graph combobox
         public List<chart_player> getAllPlayer(int t) {
             List<chart_player> player_set = new List<chart_player>();
             player_set.Add(new chart_player() { Name = "( All )", Value = "%" });

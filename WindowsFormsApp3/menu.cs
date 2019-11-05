@@ -13,14 +13,14 @@ using System.Runtime.InteropServices;
 namespace StupidGame {
     public partial class menu : Form
     {
-        dialogName d;
-        Player p;
-        Player p2;
-        OnePlayerGamePlay gp;
-        TwoPlayersGamePlay gp2;
-        string name;
-        int diffi;
-        string theme;
+        private dialogName d;
+        private Player p;
+        private Player p2;
+        private OnePlayerGamePlay gp;
+        private TwoPlayersGamePlay gp2;
+        private string name;
+        private int diffi;
+        private string theme;
         public menu()
         {
             AllocConsole();
@@ -39,7 +39,7 @@ namespace StupidGame {
                     name = d.name;
                     p = new Player(name);
 
-                    //if user click on on the setting dialog, create object for deck and go to gameplay form
+                    //if user click ok on the setting dialog, create object for deck and go to gameplay form
                     using (dialogGameSetting s = new dialogGameSetting()) {
                         if(s.ShowDialog() == DialogResult.OK) {
                             diffi = s.diffi;
@@ -50,7 +50,9 @@ namespace StupidGame {
                             } else {
                                 ds = new HardDeck(theme);
                             }
-                            gp = new OnePlayerGamePlay(p, ds, this);
+                            gp = new OnePlayerGamePlay(p, ds);
+
+                            //assign game play form closing event handler
                             gp.FormClosing += GameClosing;
                             
                             this.Hide();
@@ -63,21 +65,28 @@ namespace StupidGame {
 
         //2 Players button event handler
         private void btn2p_Click(object sender, EventArgs e) {
+
+            //Calling out dialogName (first player)
             using (d = new dialogName(1)) {
                 if (d.ShowDialog() == DialogResult.OK) {
                     name = d.name;
                     p = new Player(name);
 
+                    //Calling out dialogName (second player)
                     using (d = new dialogName(2)) {
                         if (d.ShowDialog() == DialogResult.OK) {
                             name = d.name2;
                             p2 = new Player(name);
+
+                            //Calling out game setting dialog
                             using (dialogGameSetting s = new dialogGameSetting(true)) {
                                 if (s.ShowDialog() == DialogResult.OK) {
                                     diffi = s.diffi;
                                     theme = s.theme;
                                     Deck ds = new HardDeck(theme);
-                                    gp2 = new TwoPlayersGamePlay(p, p2, ds, this);
+                                    gp2 = new TwoPlayersGamePlay(p, p2, ds);
+
+                                    //assign game play form closing event handler
                                     gp2.FormClosing += GameClosing;
 
                                     gp2.Show();
@@ -90,6 +99,7 @@ namespace StupidGame {
             }
         }
 
+        //scoreboard button event handler
         private void btnScore_Click(object sender, EventArgs e) {
             ScoreBoard sb = new ScoreBoard();
             sb.FormClosing += GameClosing;
@@ -101,6 +111,7 @@ namespace StupidGame {
             this.Close();
         }
 
+        //show menu when another form is closing
         private void GameClosing(object sender, FormClosingEventArgs e) {
              this.Show();
         }
@@ -108,7 +119,6 @@ namespace StupidGame {
         //
         //hover
         //
-
         private void btn1p_MouseEnter(object sender, EventArgs e) {
             btn1p.BackgroundImage = Properties.Resources.s1p;
         }

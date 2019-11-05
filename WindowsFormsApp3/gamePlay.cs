@@ -23,7 +23,6 @@ namespace StupidGame {
         protected Player p;
         protected Player p2;
         protected dialogWin w;
-        protected menu m;
         protected PrivateFontCollection pfc = new PrivateFontCollection();
         protected DB db = new DB();
 
@@ -36,11 +35,15 @@ namespace StupidGame {
         public gamePlay() {
             InitializeComponent();
             pfc.AddFontFile("..\\..\\resource\\Chewy.ttf");
+
+            //change controls backcolor to semi transparent
             panelP1.BackColor = Color.FromArgb(100, 0, 0, 0);
             panelBtnBack.BackColor = Color.FromArgb(100, 0, 0, 0);
             lblPlayer1Name.BackColor = Color.FromArgb(100, 0, 0, 0);
             lblTextScore.BackColor = Color.FromArgb(100, 0, 0, 0); 
             lblScore.BackColor = Color.FromArgb(100, 0, 0, 0);
+
+            //add custom font to label
             lblPlayer1Name.Font = new Font(pfc.Families[0], 28, FontStyle.Regular);
             lblTextScore.Font = new Font(pfc.Families[0], 22, FontStyle.Regular);
             lblScore.Font = new Font(pfc.Families[0], 22, FontStyle.Regular);
@@ -49,22 +52,29 @@ namespace StupidGame {
         //
         //Card flip animation + Opening
         //
-        private void animateOpening_Tick(object sender, EventArgs e) {           
+        private void animateOpening_Tick(object sender, EventArgs e) {       
+            //flip current card for each tick
             ds.Cards[animateOpenTick].flipCard();
             animateOpenTick++;
+
+            //if last card then stop the timer
             if(animateOpenTick == (ds.Difficulty*ds.Difficulty)) {
                 animateOpening.Stop();
             }
         }
 
         private void animateCloseTimer_Tick(object sender, EventArgs e) {
+            //after 2 second, start the closing card flip timer
             animateClosing.Start();
             animateCloseTimer.Stop();
         }
 
         private void animateClosing_Tick(object sender, EventArgs e) {
+            //close current card
             ds.Cards[animateCloseTick].flipCloseCard();
             animateCloseTick++;
+
+            //if last card then stop the timer and toggle preventClick to let player start to play
             if (animateCloseTick == (ds.Difficulty * ds.Difficulty)) {
                 animateClosing.Stop();
                 preventClick = false;

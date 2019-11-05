@@ -23,13 +23,13 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.plBackground = new System.Windows.Forms.Panel();
             this.pbChart = new System.Windows.Forms.PictureBox();
             this.pbMenu = new System.Windows.Forms.PictureBox();
             this.pb2p = new System.Windows.Forms.PictureBox();
             this.pb1pHard = new System.Windows.Forms.PictureBox();
             this.pb1pEasy = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.plBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2p)).BeginInit();
@@ -37,17 +37,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb1pEasy)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // plBackground
             // 
-            this.panel1.Controls.Add(this.pbChart);
-            this.panel1.Controls.Add(this.pbMenu);
-            this.panel1.Controls.Add(this.pb2p);
-            this.panel1.Controls.Add(this.pb1pHard);
-            this.panel1.Controls.Add(this.pb1pEasy);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(760, 537);
-            this.panel1.TabIndex = 0;
+            this.plBackground.Controls.Add(this.pbChart);
+            this.plBackground.Controls.Add(this.pbMenu);
+            this.plBackground.Controls.Add(this.pb2p);
+            this.plBackground.Controls.Add(this.pb1pHard);
+            this.plBackground.Controls.Add(this.pb1pEasy);
+            this.plBackground.Location = new System.Drawing.Point(12, 12);
+            this.plBackground.Name = "plBackground";
+            this.plBackground.Size = new System.Drawing.Size(760, 537);
+            this.plBackground.TabIndex = 0;
             // 
             // pbChart
             // 
@@ -117,11 +117,11 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.ControlBox = false;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.plBackground);
             this.Name = "ScoreBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ScoreBoard";
-            this.panel1.ResumeLayout(false);
+            this.plBackground.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2p)).EndInit();
@@ -133,7 +133,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel plBackground;
         private System.Windows.Forms.PictureBox pb1pEasy;
         private System.Windows.Forms.PictureBox pb2p;
         private System.Windows.Forms.PictureBox pb1pHard;

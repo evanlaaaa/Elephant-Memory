@@ -10,16 +10,15 @@ using System.Threading.Tasks;
 
 namespace StupidGame {
     public partial class TwoPlayersGamePlay : StupidGame.gamePlay {
-        SortedSet<int> seen = new SortedSet<int>();
+        private SortedSet<int> seen = new SortedSet<int>();
         public TwoPlayersGamePlay() {
             InitializeComponent();
         }
 
-        public TwoPlayersGamePlay(Player p, Player p2, Deck ds, menu m) {
+        public TwoPlayersGamePlay(Player p, Player p2, Deck ds) {
             InitializeComponent();
             this.ds = ds;
             this.p = p;
-            this.m = m;
             this.p2 = p2;
             ds.GenerateDeck(this, picClick, pbCardsBackground);
 

@@ -16,20 +16,35 @@ namespace StupidGame {
             InitializeComponent();
         }
 
-        public OnePlayerGamePlay(Player p, Deck ds, menu m) {
+        public OnePlayerGamePlay(Player p, Deck ds) {
+            InitializeComponent();
             this.ds = ds;
             this.p = p;
-            this.m = m;
+
+            panelTimer.BackColor = Color.FromArgb(100, 0, 0, 0);
+
+            //generate deck
             ds.GenerateDeck(this, picClick, pbCardsBackground);
 
+            //send background to back
             pbCardsBackground.SendToBack();
+
+            //prevent player click before opening transition start
             preventClick = true;
+
+            //start opening transition
             animateOpening.Start();
             animateCloseTimer.Start();
+
+            //assign name and score to label
             lblPlayer1Name.Text = p.Name;
             lblScore.Text = p.Score.ToString();
             Counter.Interval = 1000;
             Counter.Tick += new EventHandler(timer_Tick);
+
+            //assign custom font
+            txtTime.Font = new Font(pfc.Families[0], 22, FontStyle.Regular);
+            lblTime.Font = new Font(pfc.Families[0], 22, FontStyle.Regular);
 
             //for debug purpose (show answer to console)
             foreach (List<int> ww in ds.Map) {
@@ -95,7 +110,11 @@ namespace StupidGame {
         }
 
         private void timer_Tick(object sender, EventArgs e) {
+            //add 1 second to timer for every tick
             timer = timer.AddSeconds(1);
+
+            //display time to label
+            lblTime.Text = timer.ToString("mm:ss");
         }
     }
 }
